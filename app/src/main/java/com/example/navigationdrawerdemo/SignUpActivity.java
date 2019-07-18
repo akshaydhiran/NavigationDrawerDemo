@@ -3,6 +3,7 @@ package com.example.navigationdrawerdemo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,8 +13,13 @@ import android.widget.Toast;
 public class SignUpActivity extends AppCompatActivity {
     EditText username,password,address,phonenumber,email,id,confirmpassword;
     Button signup;
+
+    SharedPreferences prefs ;
+    SharedPreferences.Editor editor;
  public  void init()
  {
+     prefs = getSharedPreferences("preff",MODE_PRIVATE);
+     editor = prefs.edit();
      username = findViewById(R.id.reg_username);
      password = findViewById(R.id.reg_password);
      email = findViewById(R.id.reg_email);
@@ -33,8 +39,8 @@ public class SignUpActivity extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String Name, Email, ID,Address, Password,PhoneNumber,Confirmpassword;
-                Name = username.getText().toString();
+                String name, Email, ID,Address, Password,PhoneNumber,Confirmpassword;
+                name = username.getText().toString();
                 Email = email.getText().toString();
                 ID = id.getText().toString();
                 Password = password.getText().toString();
@@ -42,9 +48,19 @@ public class SignUpActivity extends AppCompatActivity {
                 Address = address.getText().toString();
                 PhoneNumber = phonenumber.getText().toString();
 
+                if(name.equals("")){
+                   username.setError("Please enter name");
+                   return;
+                }
+                editor.putString("id",ID);
+                editor.putString("name",name);
+                editor.putString("email",Email);
+                editor.putString("password",Password);
+                editor.putBoolean("auth",true);
+                editor.commit();
 
                 StringBuffer buffer = new StringBuffer();
-                buffer.append("User Name : " + Name + "\n");
+                buffer.append("User Name : " + name + "\n");
                 buffer.append("Email : " + Email + "\n");
                 buffer.append("ID : " + ID + "\n");
                 buffer.append("Password : " + Password + "\n");
@@ -52,8 +68,9 @@ public class SignUpActivity extends AppCompatActivity {
                 //Reg_details.setText(buffer.toString());
 
 
-                Intent intent = new Intent(SignUpActivity.this,StorePreferenceActivity.class);
+                Intent intent = new Intent(SignUpActivity.this,MainActivity.class);
                 startActivity(intent);
+                finish();
                 Toast.makeText(SignUpActivity.this, "SIGNUP SUCCESSFULLY !", Toast.LENGTH_SHORT).show();
             }
         });
