@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".StorePreferenceActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GREAT
+                      YOU SIGNUP SUCCESSFULLY !!"
+        android:textSize="40dp"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:background="#8AFB8C00"/>
+
+
+    <Button
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STORE DETAILS"
+        android:id="@+id/storedetails"
+        android:textSize="20sp"
+        />
+
+    <Button
+        android:layout_marginTop="20sp"
+        android:layout_marginStart="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SHOW DETAILS"
+        android:id="@+id/showdetails"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:layout_marginTop="20sp"
+        android:id="@+id/details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="USER DETAILS"/>
+
+</LinearLayout>

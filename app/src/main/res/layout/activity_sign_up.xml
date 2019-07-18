@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SignUpActivity">
+
+    <TextView
+        android:id="@+id/reg_loginform"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="REGISTERATION FORM"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:background="#D3CFCF"/>
+
+    <EditText
+        android:id="@+id/reg_username"
+        android:hint="USER NAME"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/reg_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID"
+        />
+    <EditText
+        android:id="@+id/reg_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ADDRESS"/>
+
+    <EditText
+        android:id="@+id/reg_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="PASSWORD"
+        android:inputType="textPassword"
+        />
+
+    <EditText
+        android:id="@+id/reg_confirmpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CONFIRM PASSWORD"
+        android:inputType="textPassword"
+        />
+    <EditText
+        android:id="@+id/reg_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="EMAIL"
+        android:inputType="textEmailAddress"/>
+    <EditText
+        android:id="@+id/reg_phonenumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="PHONE NUMBER"/>
+
+    <Button
+        android:id="@+id/reg_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SIGN UP"
+        android:background="#000"
+        android:textColor="#F5C805"
+        android:layout_marginStart="150dp"
+        android:textSize="20sp"/>
+
+
+</LinearLayout>
